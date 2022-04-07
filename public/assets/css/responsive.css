@@ -1,0 +1,122 @@
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .input-width {
+        width: 50% !important;
+        max-width: 100% !important;
+        flex: unset;
+    }
+
+    .col-md-none {
+        display: none
+    }
+
+    .hero-container {
+        padding: 45px 55px 0 55px !important;
+        background-color: #f7f7f7;
+    }
+
+    .properties {
+        padding: 50px 0;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0px 12px;
+    }
+
+    .propp {
+        padding: 0px 15px;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .input-width {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: unset;
+    }
+
+    .input-full-wth {
+        width: 100% !important;
+    }
+
+    .hero-container {
+        padding: 40px 15px 0px 15px !important;
+    }
+
+    .hero-container h1 {
+        font-size: 3rem;
+    }
+
+    .hero-container h6 {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .col-sm-none {
+        display: none
+    }
+
+    .bstart {
+        border-left: none !important;
+    }
+
+    .faq-container .theme-title span::after {
+        left: 2px;
+        top: 42px;
+    }
+
+    .faq-container h5 {
+        font-size: 1rem;
+    }
+
+    .accordion-body {
+        font-size: 12px;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .book-showing-form {
+        padding-left: 75px !important;
+        padding-top: 65px;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) {
+    .book-showing-form {
+        padding-left: 75px !important;
+        padding-top: 0;
+    }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .book-showing-form {
+        padding-left: 275px !important;
+        padding-top: 65px;
+    }
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1440px) {
+    .book-showing-form {
+        padding-left: 75px !important;
+        padding-top: 65px;
+    }
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1920px) {
+    .book-showing-form {
+        padding-left: 300px !important;
+        padding-top: 65px;
+    }
+}
