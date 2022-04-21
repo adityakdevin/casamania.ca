@@ -19,7 +19,8 @@ class Lead extends Model
         'Ml_num',
         'tags',
         'source',
-        'stage'
+        'stage',
+        'created_at'
     ];
 
     // propertyDetails

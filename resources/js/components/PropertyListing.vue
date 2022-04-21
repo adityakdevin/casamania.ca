@@ -13,18 +13,19 @@
                             :key="property.Ml_num"
                             class="col-lg-4 col-md-6 col-sm-12 mt-5"
                         >
-                            <PropCard :property="property" />
+                            <PropCard :property="property"/>
                         </div>
                         <div class="mt-4 text-center">
                             <router-link
-                                class="btn btn-theme-color px-5"
                                 :to="{ name: 'search-property' }"
-                                >View All</router-link
+                                class="btn btn-theme-color px-5"
+                            >View All
+                            </router-link
                             >
                         </div>
                     </div>
                     <div v-else>
-                        <no-data />
+                        <no-data/>
                     </div>
                 </div>
                 <div v-else class="row">
@@ -43,6 +44,7 @@
 import Loader from "./commonComponents/Loader.vue";
 import NoData from "./commonComponents/NoData.vue";
 import PropCard from "./property/cards.vue";
+
 export default {
     components: { Loader, PropCard, NoData },
     data() {

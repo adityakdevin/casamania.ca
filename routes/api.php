@@ -14,6 +14,8 @@ use App\Http\Controllers\NovaApi;
 Route::prefix('user')->group(function () {
     Route::post('/register', [Api\UserController::class, 'register']);
     Route::post('/login', [Api\UserController::class, 'login']);
+
+    // /send-reset-password-link
     Route::post('/send-reset-password-link', [Api\UserController::class, 'sendResetPasswordLink']);
     Route::post('/reset-password', [Api\UserController::class, 'resetPassword']);
 });
@@ -21,8 +23,8 @@ Route::prefix('user')->group(function () {
 
 // User dashboard
 Route::prefix('user')->middleware(['auth:sanctum'])->group(function () {
-    Route::get('/', [Api\UserController::class, 'profile']);
     Route::post('/logout', [Api\UserController::class, 'logout']);
+    Route::get('/', [Api\UserController::class, 'profile']);
     Route::post('/update-profile', [Api\UserController::class, 'update']);
     // Update avatar
     Route::post('/update-user-avatar', [Api\UserController::class, 'updateAvatar']);
@@ -77,6 +79,10 @@ Route::get('/search', [Api\MasterSearchController::class, 'search']);
 Route::prefix('crm')->group(function () {
     // nova Login
     Route::post('/login', [NovaApi\AuthController::class, 'login']);
+    Route::group(['prefix' => 'facebook'], static function () {
+        Route::get('login',[\App\Http\Controllers\Api\FacebookController::class,'login']);
+        Route::get('callback',[\App\Http\Controllers\Api\FacebookController::class,'callback']);
+    });
 });
 Route::prefix('crm')->middleware(['auth:sanctum'])->group(function () {
     // nova Logout
@@ -90,6 +96,13 @@ Route::prefix('crm')->middleware(['auth:sanctum'])->group(function () {
 
     // Getting a people details
     Route::get('/people/get-details/{id}', [NovaApi\LeadController::class, 'getPeopleWithUserId']);
+    Route::get('/people-filters-data/{type}', [NovaApi\LeadController::class, 'getFilters']);
+    Route::group(['prefix' => 'facebook'], static function () {
+        Route::get('check-is-connected',[\App\Http\Controllers\Api\FacebookController::class,'isConnected']);
+        Route::get('pages',[\App\Http\Controllers\Api\FacebookController::class,'pages']);
+        Route::post('pages/{page}/subscribe',[\App\Http\Controllers\Api\FacebookController::class,'subscribePage']);
+        Route::get('leads/{page}',[\App\Http\Controllers\Api\FacebookController::class,'leads']);
+    });
 });
 
 

@@ -4,10 +4,10 @@
             <div class="container p-0">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-12">
-                        <router-link to="/" class="text-color fw-bold">
+                        <router-link class="text-color fw-bold" to="/">
                             <img
-                                src="/assets/images/logo/logo.svg"
                                 alt="Casamania"
+                                src="/assets/images/logo/logo.svg"
                                 width="150"
                             />
                         </router-link>
@@ -21,53 +21,53 @@
                         <ul class="list-unstyled">
                             <li class="social-icons">
                                 <a
+                                    class="w-100 h-100"
                                     href="https://www.facebook.com/remaxmillenniumrealestate/"
                                     target="_blank"
-                                    class="w-100 h-100"
                                 >
                                     <img
-                                        src="/assets/images/icons/facebook-logo.png"
-                                        class="img-fluid m-auto"
                                         alt=""
+                                        class="img-fluid m-auto"
+                                        src="/assets/images/icons/facebook-logo.png"
                                     />
                                 </a>
                             </li>
                             <li class="social-icons">
                                 <a
+                                    class="w-100 h-100"
                                     href="https://twitter.com/MillenniumRemax"
                                     target="_blank"
-                                    class="w-100 h-100"
                                 >
                                     <img
-                                        src="/assets/images/icons/twitter.png"
-                                        class="img-fluid m-auto"
                                         alt=""
+                                        class="img-fluid m-auto"
+                                        src="/assets/images/icons/twitter.png"
                                     />
                                 </a>
                             </li>
                             <li class="social-icons">
                                 <a
-                                    href="https://www.instagram.com/remaxmillennium/"
-                                    target="_blank"
                                     class="w-100 h-100"
+                                    href="https://www.instagram.com/remaxmillennium/"
                                     style="color: white; font-size: 18px"
+                                    target="_blank"
                                 >
                                     <i
-                                        class="fab fa-instagram"
                                         aria-hidden="true"
+                                        class="fab fa-instagram"
                                     ></i>
                                 </a>
                             </li>
                             <li class="social-icons">
                                 <a
-                                    href="https://www.youtube.com/channel/UCDBISvKl8ipeM1dFFKOAH4w"
-                                    target="_blank"
                                     class="w-100 h-100"
+                                    href="https://www.youtube.com/channel/UCDBISvKl8ipeM1dFFKOAH4w"
                                     style="color: white; font-size: 18px"
+                                    target="_blank"
                                 >
                                     <i
-                                        class="fab fa-youtube"
                                         aria-hidden="true"
+                                        class="fab fa-youtube"
                                     ></i>
                                 </a>
                             </li>
@@ -80,7 +80,7 @@
                             Independently Owned & Operated
                         </p>
                         <p class="small p-0 m-0">
-                            Address: <br />
+                            Address: <br/>
                             81 Zenway Boulevard #25, Woodbridge, Ontario L4H 0S5
                         </p>
                         <p class="small p-0 m-0">Office: (905) 265-2200</p>
@@ -107,25 +107,25 @@
                         <form @submit.prevent="subscribe">
                             <input
                                 v-model="form.email"
-                                type="text"
                                 class="form-control mb-3"
                                 placeholder="Enter your email address"
+                                type="text"
                             />
                             <button
                                 :disabled="sSubscribeEmail"
-                                type="submit"
                                 class="btn btn-theme-color w-100"
+                                type="submit"
                             >
                                 <i
                                     v-if="sSubscribeEmail"
-                                    class="fa fa-spinner fa-spin pl-2"
                                     aria-hidden="true"
+                                    class="fa fa-spinner fa-spin pl-2"
                                 ></i>
                                 Subscribe
                             </button>
                             <span v-html="rSubscribeEmail"></span>
                         </form>
-                        <br />
+                        <br/>
                         <div class="row">
                             <div class="col-12 text-center">
                                 <h6
@@ -143,7 +143,7 @@
                                         <router-link
                                             class="text-muted"
                                             to="/about-us"
-                                            >About</router-link
+                                        >About</router-link
                                         ></u
                                     >
                                 </span>
@@ -153,7 +153,7 @@
                                         <router-link
                                             class="text-muted"
                                             to="/contact-us"
-                                            >Contact</router-link
+                                        >Contact</router-link
                                         ></u
                                     >
                                 </span>
@@ -163,7 +163,7 @@
                                         <router-link
                                             class="text-muted"
                                             to="/terms-of-use"
-                                            >Copyright/Terms of Use</router-link
+                                        >Copyright/Terms of Use</router-link
                                         ></u
                                     >
                                 </span>
@@ -173,7 +173,7 @@
                                         <router-link
                                             class="text-muted"
                                             to="/privacy-policy"
-                                            >Privacy Policy</router-link
+                                        >Privacy Policy</router-link
                                         ></u
                                     >
                                 </span>
@@ -186,7 +186,7 @@
 
         <section class="p-0 footer">
             <div class="container">
-                <hr class="m-0" />
+                <hr class="m-0"/>
             </div>
         </section>
 
@@ -200,9 +200,9 @@
             </div>
             <div class="b-t-t">
                 <button
-                    @onclick="backToTop"
                     id="backToTopBtn"
                     title="Go to top"
+                    @onclick="backToTop"
                 >
                     Top
                 </button>
@@ -216,7 +216,7 @@
 export default {
     data() {
         return {
-            form: { email: "" },
+            form: {email: ""},
             sSubscribeEmail: false,
             rSubscribeEmail: "",
         };
@@ -227,7 +227,6 @@ export default {
         },
         async subscribe() {
             const self = this;
-
             self.sSubscribeEmail = true;
             self.rSubscribeEmail =
                 "<span class='text-muted'>Subscribing...</span>";

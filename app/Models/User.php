@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -65,5 +64,10 @@ class User extends Authenticatable
     public function activity()
     {
         return $this->hasMany('App\Models\RecentVisited', 'user_id', 'id')->orderBy('id', "desc");
+    }
+
+    public function facebook()
+    {
+        return $this->hasOne(FacebookDetail::class);
     }
 }
